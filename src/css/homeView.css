@@ -1,0 +1,116 @@
+.home-container {
+    /* 이미지 경로 */
+    background-image: url('../assets/img/food-home-bg.jpg'); /* 이미지 경로 */
+    background-size: cover; /* 이미지를 화면에 꽉 채움 */
+    background-position: center; /* 이미지를 가운데 정렬 */
+    height: 100vh; /* 화면 전체 높이 */
+    width: 100%; /* 화면 전체 너비 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .food-main-container{
+    display: flex;
+    width: 70%;
+    height: calc((340/720)*100vh);
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+    height: calc((193 / 720) * 100vh); /* 약 26.8vh */
+    width:  calc((400 / 1280) * 100vw); /* 가로 크기는 필요에 따라 설정 */
+    color: white;
+    font-family: 'Pretendard', sans-serif;
+    font-size: max(3.2vw, 40px);
+    font-weight: 600;
+    position: relative; /* ::after를 기준으로 배치하기 위해 position 추가 */
+}
+
+.main-content::after {
+    content: ''; /* 반드시 content를 설정해야 ::after가 동작 */
+    position: absolute; /* 부모 요소 기준으로 배치 */
+    top: 0; /* 부모 요소의 상단에 맞춤 */
+    left: 0; /* 부모 요소의 왼쪽에 맞춤 */
+    width: 12px; /* 선의 두께 */
+    height: 100%; /* 부모 요소의 높이에 맞춤 */
+    background-color: white; /* 선 색상 */
+    opacity: 0.2; /* 투명도 20% */
+}
+  .main-content > div {
+    padding-left: 48px;
+    flex: 1; /* 자식 요소를 동일한 높이로 분배 */
+    display: flex; /* 내용 중앙 정렬을 위해 flex 사용 */
+  }
+  
+  .main-content :nth-child(1) {
+    align-items: flex-start;
+    justify-content: flex-start; /* 오른쪽 정렬 */
+    /*background-color: aquamarine;*/
+  }
+
+  .main-content :nth-child(2) {
+    justify-content: flex-end; /* 오른쪽 정렬 */
+  }
+
+  .main-content :nth-child(3) {
+    align-items: flex-end;
+    justify-content: flex-start; /* 오른쪽 정렬 */
+    /*background-color: aquamarine;*/
+  }
+
+  .home-below-container{
+    display: flex;
+  }
+
+  .divider{
+    margin-top : calc((24 / 720) * 100vh);
+    height : calc((2 / 720) * 100vh); /* 선의 두께 */
+    width: calc((421/1280)*100vw); /* 부모 요소의 너비에 맞춤 */
+    background-color: #ffffff; /* 선 색상 */
+    opacity: 0.8;
+    left: calc((220/1280)*100vw);
+  }
+
+  .start-btn {
+    margin-left: calc((60/1280)*100vw);
+  }
+
+  .sub-title {
+    position: absolute;
+    top: calc((650/720) * 100vh);
+    left: calc((1019/1280) * 100vw);
+    color:white;
+    font-family: 'Pretendard', sans-serif;
+    /* font-size: 14px; */
+    font-size: max(14px,1vw);
+    font-weight: 200;
+  }
+
+.home-text-container:nth-of-type(1) {
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.home-text-container:nth-of-type(2) {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: max(6vw, 80px);
+ 
+ /* margin-right: calc((20/1280)*100vw);*/
+}
+
+.home-text-container:nth-of-type(3) {
+  display: flex;
+  justify-content: flex-start;  
+}
+
+.home-text-container {
+  display: flex !important;
+  align-items: center !important;
+}

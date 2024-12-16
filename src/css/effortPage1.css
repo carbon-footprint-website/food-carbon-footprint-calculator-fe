@@ -1,0 +1,115 @@
+.effortv-outer-container {
+    background-color: white;
+    position: relative; /* 부모 요소를 기준으로 자식 레이어 설정 */
+    
+    background-size: cover; /* 배경 이미지가 컨테이너를 덮도록 설정 */
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.effortv-content-container{
+    width: 80%;
+    height: 80vh;
+    /* background-color: rgb(102, 215, 238); */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.effortv-main-content{
+    /* background-color: aquamarine; */
+    height: calc(100% - 38px);
+    display: flex;
+    justify-content: center;
+}
+
+.effortv-main-inner-content{
+    /* background-color: rgb(173, 223, 206); */
+    height: calc(100% - 38px);
+    width:90%;
+    display: flex;
+
+}
+
+
+.effortv-inner-left {
+    width: 48%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.effortv-inner-right {
+    width: 52%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Pretendard', sans-serif;
+    justify-content: center;
+
+}
+
+.effortv-box-container{
+    display: flex;
+    width: 92%;
+ 
+    display: flex;
+    flex-direction: column;
+
+}
+
+.effortv-inner-desc{
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 300;
+    font-size: 1.4vw;
+    margin-top: 2.6vh;
+}
+
+.effortv-box-desc {
+    margin-top: 7vh;
+    width: 95%;
+    height: calc((178/720)*100vh);
+    background-color:rgba(10, 49, 89, 0.06);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4vw;
+
+}
+
+.effortv-box-desc >p {
+    margin : 0 auto;
+    line-height: 250%;
+    width: 85%;
+}
+
+
+.effortv-inner-right-content {
+   
+    width: 90%;
+    height: 90%;
+}
+
+
+.effortv-inner-left-content {
+    /* background-color: blue; */
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
