@@ -35,7 +35,7 @@ const RegionDropdown = ({ width = "200px", height = "40px", onRegionSelect  }) =
         control: (base) => ({
           ...base,
           width: width,
-          height: height, // 드롭다운 너비
+
           display: "flex",
           alignItems: "center", // 세로 가운데 정렬
         }),
@@ -43,7 +43,7 @@ const RegionDropdown = ({ width = "200px", height = "40px", onRegionSelect  }) =
 
         placeholder: (base) => ({
           ...base,
-          height:height,
+
           display:'flex',
           fontSize:'1vw',
           alignItems:'center',
