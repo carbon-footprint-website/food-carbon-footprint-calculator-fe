@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/homeView.css';
-import Button from '../component/button';
+import './homeView.css';
+import Button from 'component/Button/button';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {

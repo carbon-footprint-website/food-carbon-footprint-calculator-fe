@@ -1,12 +1,13 @@
 import React from 'react';
-import '../css/effortPage1.css';
-import Button from '../component/button';
+import './effortForLocalFood.css'
+import Button from 'component/Button/button';
 import { useNavigate } from 'react-router-dom';
-import MainIntroImg from '../assets/img/main-intro-img.jpg'
-import homeIcon from '../assets/icon/home-icon-navy.png';
+import homeIcon from 'assets/icon/home-icon-navy.png';
 import { useEffect, useState, useRef } from 'react';
 import { Map,  Polygon, CustomOverlayMap} from "react-kakao-maps-sdk";
-import MapDropdown from '../component/RegionDropdown/mapDropdown';
+import MapDropdown from 'component/MapDropdown/mapDropdown';
+import NextIcon from 'assets/icon/next-icon-navy.png';
+//import EmissionDataByRegion from './json/EmissionDataByRegion.json';
 
 const EmissionDataByRegion = {
     서울: {
@@ -345,6 +346,16 @@ function Effort1() {
         }
     };
 
+    const navigate = useNavigate();
+
+    const goToHomePage = () => {
+        navigate("/main")
+    }
+
+    const goToNextEffort = () =>{
+        navigate('/domestic-food')
+    }
+
     // JSON 데이터 로드
     useEffect(() => {
         const fetchBoundaryData = async () => {
@@ -377,11 +388,6 @@ function Effort1() {
 
     
 
-    const navigate = useNavigate();
-
-    const goToHomePage = () => {
-        navigate("/main")
-    }
 
   return (
     <div className="effortv-outer-container">
@@ -395,8 +401,8 @@ function Effort1() {
                 imgWidth={'12px'}
                 width="calc((90/1280)*100vw)"
                 height="calc((38/720)*100vh)"
-                fontSize={'1.2vw'}
-                border='dashed 0.2vw'
+                fontSize={'max(12px,1vw)'}
+                border='dashed 0.23vw'
                 borderStyle='dashed'
                 borderColor='#001F3F'
                 fontWeight='600'
@@ -410,11 +416,11 @@ function Effort1() {
                         <div className='effortv-inner-left-content'>
                             <Map
                                 center={{ lat: 36.5, lng: 127.5 }}
-                                style={{ width: "26vw", height: "68vh" }}
+                                style={{ width: "26vw", height: "95%" }}
                                 level={13}
-                                isZoomable={true} // 줌 비활성화
-                                draggable={false} // 드래그 비활성화
-                                scrollwheel={false} // 마우스 스크롤 비활성화
+                                // isZoomable={true} // 줌 비활성화
+                                // draggable={false} // 드래그 비활성화
+                                // scrollwheel={false} // 마우스 스크롤 비활성화
                                 >
                                     {boundaries.map((boundary, index) => (
                                 <React.Fragment key={index}>
@@ -467,7 +473,7 @@ function Effort1() {
                             height={'5.4vh'}  
                             />
                             <div className='effortv-inner-desc'>
-                            국내산 식자재를 구매하면 탄소 발자국을 줄일 수 있어요 !
+                            로컬 식자재를 구매하면 탄소 발자국을 줄일 수 있어요 !
                             </div>
                         </div>
 
@@ -486,7 +492,7 @@ function Effort1() {
                                     height='calc((50/720)*100vh)'
                                     onRegionSelect={handleToRegion}
                                 />
-                                </span>에서 자란 당근을 구매하기 위해 운송과정에서
+                                </span>에서 자란 <br></br>당근을 구매하기 위해 운송과정에서
                                 <Button
                                     label={ resultEmission }
                                     style={{
@@ -504,6 +510,20 @@ function Effort1() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className='next-button-container'>
+                <Button 
+                label={"다음"} 
+                nextImgSrc={NextIcon}
+                imgWidth={'6px'}
+                width={'calc((80/1280)*100vw)'} 
+                height={'calc((42/720)*100vh)'} 
+                fontSize={'max(12px,1vw)'} 
+                fontWeight={'700'}
+                color={'#001F3F'} 
+                border={'solid 0.2vw'}
+                onClick={goToNextEffort}
+                    /> 
             </div>
         </div>
     </div>

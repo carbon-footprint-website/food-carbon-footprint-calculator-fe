@@ -1,6 +1,6 @@
 .home-container {
     /* 이미지 경로 */
-    background-image: url('../assets/img/food-home-bg.jpg'); /* 이미지 경로 */
+    background-image: url('assets/img/food-home-bg.jpg'); /* 이미지 경로 */
     background-size: cover; /* 이미지를 화면에 꽉 채움 */
     background-position: center; /* 이미지를 가운데 정렬 */
     height: 100vh; /* 화면 전체 높이 */

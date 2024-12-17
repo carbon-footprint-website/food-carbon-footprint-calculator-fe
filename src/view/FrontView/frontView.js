@@ -1,20 +1,20 @@
 import React from 'react';
-import '../css/frontView.css';
-import Button from '../component/button';
+import './frontView.css';
+import Button from 'component/Button/button';
 import { useNavigate } from 'react-router-dom';
-import MainIntroImg from '../assets/img/main-intro-img.jpg'
-import HomeIcon from "../assets/icon/previous-icon.png"
+import MainIntroImg from 'assets/img/main-intro-img.jpg'
+import HomeIcon from "assets/icon/previous-icon.png"
 
 function Main() {
 
     const navigate = useNavigate();
 
     const goToEffortPage1 = () => {
-      navigate('/domestic-food'); // '/select1' 경로로 이동
+      navigate('/local-food'); // '/select1' 경로로 이동
     };
 
     const goToEffortPage2 = () => {
-        navigate('/local-food'); // '/select1' 경로로 이동
+        navigate('/domestic-food'); // '/select1' 경로로 이동
       };
 
     const goToEffortPage3 = () => {

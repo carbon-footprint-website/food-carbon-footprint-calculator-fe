@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './css/button.css'
+import './button.css'
 /*...props로 추가 속성 전달 */
 const Button = ({ 
   width = '150px', 

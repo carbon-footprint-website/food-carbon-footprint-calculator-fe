@@ -1,7 +1,6 @@
 .effortv-outer-container {
     background-color: white;
     position: relative; /* 부모 요소를 기준으로 자식 레이어 설정 */
-    
     background-size: cover; /* 배경 이미지가 컨테이너를 덮도록 설정 */
     background-repeat: no-repeat;
     width: 100vw;
@@ -15,7 +14,7 @@
 }
 
 .effortv-content-container{
-    width: 80%;
+    width: 78%;
     height: 80vh;
     /* background-color: rgb(102, 215, 238); */
     display: flex;
@@ -24,23 +23,23 @@
 }
 
 .effortv-main-content{
-    /* background-color: aquamarine; */
-    height: calc(100% - 38px);
+
+    height: 100%;
     display: flex;
     justify-content: center;
 }
 
 .effortv-main-inner-content{
     /* background-color: rgb(173, 223, 206); */
-    height: calc(100% - 38px);
-    width:90%;
+    height: 100%;
+    width:100%;
     display: flex;
 
 }
 
 
 .effortv-inner-left {
-    width: 48%;
+    width: 45%;
     height:100%;
     display: flex;
     align-items: center;
@@ -49,7 +48,7 @@
 }
 
 .effortv-inner-right {
-    width: 52%;
+    width: 55%;
     height:100%;
     display: flex;
     flex-direction: column;
@@ -79,14 +78,14 @@
 .effortv-box-desc {
     margin-top: 7vh;
     width: 95%;
-    height: calc((178/720)*100vh);
     background-color:rgba(10, 49, 89, 0.06);
     border-radius: 20px;
     display: flex;
+    display: inline-block;
+    padding: calc((30/1280)*100vw) 0;
     align-items: center;
     justify-content: center;
     font-size: 1.4vw;
-
 }
 
 .effortv-box-desc >p {
@@ -110,6 +109,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
+.next-button-container {
+    display: flex;
+    justify-content: flex-end;
+}

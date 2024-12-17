@@ -1,22 +1,29 @@
 import React from 'react';
-import '../css/effortPage1.css';
-import Button from '../component/button';
+import Button from 'component/Button/button';
 import { useNavigate } from 'react-router-dom';
-import MainIntroImg from '../assets/img/main-intro-img.jpg'
-import homeIcon from '../assets/icon/home-icon-navy.png';
-import strawBerry from '../assets/img/strawberry-img.jpg'
-function Effort3() {
+import homeIcon from 'assets/icon/home-icon-navy.png';
+import EffortImg2 from 'assets/img/effort2-img.jpg';
+import RegionDropdown from 'component/RegionDropdown/regionDropdown';
+import NextIcon from 'assets/icon/next-icon-navy.png';
 
+import { useState } from 'react';
+
+function Effort2() {
+
+    const [carbonEmission, setCarbonEmission] = useState(0);
     const navigate = useNavigate();
-
-    const goToSelectionPage = () => {
-      navigate('/select'); // '/select1' 경로로 이동
-    };
 
     const goToHomePage = () => {
         navigate("/main")
     }
 
+    const goToNextEffort = () =>{
+        navigate('/seasonal-food')
+    }
+
+    const handleRegionSelect = (emission) => {
+        setCarbonEmission(emission)
+      };
 
   return (
     <div className="effortv-outer-container">
@@ -30,28 +37,27 @@ function Effort3() {
                 imgWidth={'12px'}
                 width="calc((90/1280)*100vw)"
                 height="calc((38/720)*100vh)"
-                fontSize={'1.2vw'}
-                border='dashed 0.2vw'
+                fontSize={'max(12px,1vw)'}
+                border='dashed 0.24vw'
                 borderStyle='dashed'
                 borderColor='#001F3F'
-                fontWeight='600'
+                fontWeight='700'
                 color='#001F3F'
                 onClick={goToHomePage} />
-
             </div>
 
             <div className='effortv-main-content'>
                 <div className='effortv-main-inner-content'>
                     <div className='effortv-inner-left'>
                         <div className='effortv-inner-left-content'>
-                            <img src={strawBerry} style={{ width:'41vh' ,radius:'12px'}}/>
+                            <img src={EffortImg2} style={{ width:'41vh' ,radius:'12px'}}/>
                         </div>
                     </div>
                     <div className='effortv-inner-right'>
                         
                             <div className='effortv-box-container'>
                                 <Button 
-                                label={'노력 03'}
+                                label={'노력 02'}
                                 radius={'8px'}
                                 border={'none'}
                                 fontSize={'max(16px,1.2vw)'}
@@ -61,16 +67,23 @@ function Effort3() {
                                 height={'5.4vh'}  
                                 />
                                 <div className='effortv-inner-desc'>
-                                제철 식자재를 구매하면 탄소 발자국을 줄일 수 있어요 !
+                                국내산 식재료를 구매하면 탄소발자국을 줄일 수 있어요 !
                                 </div>
                             </div>
 
-                     
                             <div className='effortv-box-desc'>
                                 <p >
-                                    딸기를 제철에 먹으면, 비닐하우스 재배로 인한 <br></br> 온실가스 배출량
+                                    <span style={{display:'inline-block', marginRight:'1vw'}}>
+                                    <RegionDropdown
+                                        width='calc((180/1280)*100vw)'
+                                        height='calc((50/720)*100vh)'
+                                        onRegionSelect={handleRegionSelect}
+                                    />
+                                    </span>
+                                  
+                                    를 구매하면 수입을 위해 <br></br> 온실가스 배출량
                                     <Button
-                                    label={7.212}
+                                    label={carbonEmission}
                                     style={{
                                         width:'6vw',
                                         height:'5vh',
@@ -81,24 +94,30 @@ function Effort3() {
                                         backgroundColor:'#001F3F',
                                         border :'white'
                                     }}
-                                    /> tCO2eq를 줄일 수 있습니다.
+                                    /> gCO2eq/kg 의 온실가스를 더 배출합니다.
                                 </p>
                             </div>
-                      
-                        
                     </div>
-                
                 </div>
-                
             </div>
-
-
+            <div className='next-button-container'>
+                <Button 
+                label={"다음"} 
+                nextImgSrc={NextIcon}
+                imgWidth={'6px'}
+                width={'calc((80/1280)*100vw)'} 
+                height={'calc((42/720)*100vh)'} 
+                fontSize={'max(12px,1vw)'} 
+                fontWeight={'700'}
+                color={'#001F3F'} 
+                border={'solid 0.2vw'}
+                onClick={goToNextEffort}
+                    /> 
+            </div>
         </div>
-
-
     </div>
    
   );
 }
 
-export default Effort3;
+export default Effort2;
