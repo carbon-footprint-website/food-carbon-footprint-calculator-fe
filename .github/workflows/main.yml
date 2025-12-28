@@ -39,7 +39,7 @@ jobs:
 
 
       - name: Build the Vue app
-        run: npm run build
+        run: CI=false npm run build
 
       - name: Build Docker image
         run: docker build . --file Dockerfile --tag ${{ env.DOCKER_IMAGE_NAME }}:latest
