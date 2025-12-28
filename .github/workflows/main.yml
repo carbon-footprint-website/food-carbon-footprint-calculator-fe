@@ -61,7 +61,7 @@ jobs:
           host: ${{ env.SERVER_HOST }}
           username: ${{ env.SERVER_SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 234
+          port: 12234
           script: |
             LOG_DIR="/home/ubuntu/app-logs"
             mkdir -p $LOG_DIR
